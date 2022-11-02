@@ -56,7 +56,7 @@ jobs:
       - run:
           name: Config Account Information on eSignerCKA
           command: |
-            /home/circleci/project/eSignerCKA/eSignerCKATool.exe config -mode ${MODE} -user "${USERNAME}" -pass "${PASSWORD}" -totp "${TOTP_SECRET}" -key "/home/circleci/project/eSignerCKA/master.key" -r
+            /home/circleci/project/eSignerCKA/eSignerCKATool.exe config -mode $env:MODE -user "$env:USERNAME" -pass "$env:PASSWORD" -totp "$env:TOTP_SECRET" -key "/home/circleci/project/eSignerCKA/master.key" -r
 
       # 5) Unload and Load certificate to windows certificate store
       - run:
